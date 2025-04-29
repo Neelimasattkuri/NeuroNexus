@@ -1,68 +1,105 @@
+/* Full screen blurred office-style background */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    margin: 0;
-    padding: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* Form wrapper with padding */
+.form-wrapper {
+  padding: 30px;
+}
+
+/* Main form container with effects */
 .form-container {
-    background-color: #ffffff;
-    max-width: 500px;
-    margin: auto;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  max-width: 520px;
+  width: 100%;
+  animation: fadeIn 1.2s ease;
+  backdrop-filter: blur(10px);
 }
 
-h2 {
-    text-align: center;
-    color: #333;
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.form-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 24px;
 }
 
+/* Labels and inputs */
 label {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #333;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
+input,
 textarea,
 select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Gender radio buttons */
 .gender-options {
-    display: flex;
-    gap: 15px;
-    margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
 }
 
 .gender-options label {
-    font-weight: normal;
+  font-weight: normal;
+  color: #444;
+  font-size: 14px;
 }
 
+/* Stylish submit button */
 button {
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
 button:hover {
-    background-color: #388e3c;
+  background: linear-gradient(135deg, #0072ff, #005fcc);
+  transform: translateY(-2px);
 }
